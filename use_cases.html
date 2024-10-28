@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title - SDAQ Project 1</title> <!-- Modify the title per page -->
+    <title>Use Cases - SDAQ Project 1</title> <!-- Updated title -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,8 +27,32 @@
     <!-- Main Content Section -->
     <main>
         <section class="centered-section">
-            <h2>Use Cases</h2> <!-- Modify per page -->
-            <p>This is a placeholder for the main content of this page. Replace this content with specific details relevant to each page.</p>
+            <h2>Use Cases</h2> <!-- Updated section heading -->
+
+            <!-- Event Organizer Use Cases -->
+            <h3>Event Organizer Use Cases</h3>
+            <ul>
+                <li>The organizer can create events by specifying details such as date, time, location, ticket types, prices, and capacity. This requires an “organizer” profile login, and once created, the event is available to attendees.</li>
+                <li>The organizer can monitor and manage ticket sales in real time, viewing details like ticket types sold and remaining capacity. This functionality is available post-event creation, with real-time updates shown on the organizer's frontend.</li>
+                <li>The organizer can add merchandise and concessions for attendees to pre-order or purchase at the event. Items listed by the vendor become available for purchase.</li>
+                <li>The organizer has access to an analytics dashboard displaying real-time insights on ticket sales, attendee check-ins, merchandise sales, and vendor performance.</li>
+            </ul>
+
+            <!-- Attendee Use Cases -->
+            <h3>Attendee Use Cases</h3>
+            <ul>
+                <li>The attendee can search and browse events based on categories, dates, locations, and popularity. Only listed events are visible to attendees; in-progress events are hidden.</li>
+                <li>The attendee can buy tickets and receive a unique QR code after completing a valid payment. The QR code is generated upon successful payment.</li>
+                <li>The attendee can pre-order food, drinks, and merchandise, which are linked to their QR code for easy access at the event. The QR code is updated once the order is accepted.</li>
+                <li>The attendee checks in by scanning their QR code, registering them as present and granting vendors access to pre-ordered items. Additional purchases can be made on-site, updating the QR code accordingly.</li>
+            </ul>
+
+            <!-- Vendor Use Cases -->
+            <h3>Vendor Use Cases</h3>
+            <ul>
+                <li>Vendors can access a list of orders linked to attendee QR codes, fulfill these orders upon scan, and update order statuses.</li>
+                <li>Vendors can update inventory levels for food, drinks, and merchandise, providing real-time availability for organizers and attendees to view.</li>
+            </ul>
         </section>
     </main>
     

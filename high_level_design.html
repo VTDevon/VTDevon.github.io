@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title - SDAQ Project 1</title> <!-- Modify the title per page -->
+    <title>High-Level Design - SDAQ Project 1</title> <!-- Updated title -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,8 +27,60 @@
     <!-- Main Content Section -->
     <main>
         <section class="centered-section">
-            <h2>High-Level Design</h2> <!-- Modify per page -->
-            <p>This is a placeholder for the main content of this page. Replace this content with specific details relevant to each page.</p>
+            <h2>High-Level Design</h2> <!-- Updated section heading -->
+
+            <!-- Abstract Design Style -->
+            <p>
+                EventSphere’s high-level architecture adopts an <strong>Abstract Design Style</strong> to create a modular, user-centered, and event-driven system with clear domain boundaries, security, and resilience.
+            </p>
+
+            <!-- Layered Modular Approach -->
+            <h3>Layered Modular Approach</h3>
+            <p>To enhance maintainability and scalability, EventSphere follows a layered approach with the following modules:</p>
+            <ul>
+                <li><strong>Presentation Layer</strong>: Manages user interfaces for organizers and attendees, enabling event booking, sales management, and vendor interactions, with a responsive experience across devices.</li>
+                <li><strong>Business Logic Layer</strong>: Encapsulates core functionalities like ticketing, event management, and payment processing, ensuring that each function is modular and scalable.</li>
+                <li><strong>Data Access Layer</strong>: Manages data interactions with storage systems, supporting various types (e.g., SQL, NoSQL) for different services like users, events, orders, and inventory.</li>
+            </ul>
+
+            <!-- Domain Driven Design -->
+            <h3>Domain-Driven Design</h3>
+            <p>EventSphere’s domains are organized based on real-world event management concepts, ensuring a close alignment with business functions:</p>
+            <ul>
+                <li><strong>User Management</strong>: Handles authentication, profile management, and user roles (e.g., attendees, organizers, vendors).</li>
+                <li><strong>Event Management</strong>: Manages event data, ticket availability, and scheduling.</li>
+                <li><strong>Order and Payment Processing</strong>: Processes ticket and merchandise orders, handles payments, and integrates with third-party payment services.</li>
+                <li><strong>Vendor and Inventory Management</strong>: Manages vendor data and inventory, synchronizing order fulfillment with event flow.</li>
+                <li><strong>Analytics and Reporting</strong>: Provides real-time analytics and post-event metrics through a data-driven dashboard for organizers.</li>
+            </ul>
+
+            <!-- Event-Driven System -->
+            <h3>Event-Driven System</h3>
+            <p>To handle traffic spikes, EventSphere uses an asynchronous, event-driven architecture:</p>
+            <ul>
+                <li><strong>Event Notification</strong>: Actions like "Ticket Purchased" and "Order Placed" trigger events on a centralized event bus.</li>
+                <li><strong>Reactive Event Listeners</strong>: Each service responds only to relevant events, such as analytics tracking ticket sales and vendor services handling order fulfillment.</li>
+                <li><strong>Logging Service</strong>: Records critical actions for auditing, with events stored in a log system, potentially directed to cloud storage.</li>
+            </ul>
+
+            <!-- Security Design -->
+            <h3>Security Design</h3>
+            <p>EventSphere’s security model includes:</p>
+            <ul>
+                <li><strong>Authentication and Authorization</strong>: Role-based access control (e.g., Auth0) for managing permissions by user role.</li>
+                <li><strong>Secure Payment Gateway Integration</strong>: Isolates payment processing to protect transaction integrity.</li>
+                <li><strong>Data Encryption and Protection</strong>: Ensures data security through encryption in transit and at rest.</li>
+            </ul>
+
+            <!-- Scalability & Resilience -->
+            <h3>Scalability & Resilience</h3>
+            <p>To maintain performance, EventSphere includes load balancing and auto-scaling capabilities to manage varying traffic levels effectively.</p>
+
+            <!-- Adding the figure -->
+            <figure>
+                <img src="images/eventsphere_modules.png" alt="Diagram of EventSphere Modules">
+                <figcaption>Figure 2: Modules of EventSphere</figcaption>
+            </figure>
         </section>
     </main>
     
