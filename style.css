@@ -98,3 +98,9 @@ button, .btn, a.btn {
 button:hover, .btn:hover, a.btn:hover {
     background-color: var(--highlight-color);
 }
+
+.centered-section {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px; /* Optional: to control the width */
+}
