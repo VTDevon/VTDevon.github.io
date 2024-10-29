@@ -1,65 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Use Cases - SDAQ Project 1</title> <!-- Updated title -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Use Cases - SDAQ Project 1</title>
+    <!-- Updated title -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <!-- Header Section with Navigation -->
     <header>
-        <h1>SDAQ Project 1</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="background.html">Background</a></li>
-                <li><a href="design_rationale.html">Design Rationale</a></li>
-                <li><a href="requirements.html">Requirements</a></li>
-                <li><a href="high_level_design.html">High-Level Design</a></li>
-                <li><a href="use_cases.html">Use Cases</a></li>
-            </ul>
-        </nav>
+      <h1>SDAQ Project 1</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="background.html">Background</a></li>
+          <li><a href="design_rationale.html">Design Rationale</a></li>
+          <li><a href="requirements.html">Requirements</a></li>
+          <li><a href="high_level_design.html">High-Level Design</a></li>
+          <li><a href="use_cases.html">Use Cases</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Main Content Section -->
     <main>
-        <section class="centered-section">
-            <h2>Use Cases</h2> <!-- Updated section heading -->
+      <section class="centered-section">
+        <h2>Use Cases</h2>
+        <p>
+          The use cases for EventSphere would be primarily categorized relevant
+          to three interactive entities which are namely the organizer, the
+          attendee and the vendor as described below.
+        </p>
+        <!-- Updated section heading -->
 
-            <!-- Event Organizer Use Cases -->
-            <h3>Event Organizer Use Cases</h3>
-            <ul>
-                <li>The organizer can create events by specifying details such as date, time, location, ticket types, prices, and capacity. This requires an “organizer” profile login, and once created, the event is available to attendees.</li>
-                <li>The organizer can monitor and manage ticket sales in real time, viewing details like ticket types sold and remaining capacity. This functionality is available post-event creation, with real-time updates shown on the organizer's frontend.</li>
-                <li>The organizer can add merchandise and concessions for attendees to pre-order or purchase at the event. Items listed by the vendor become available for purchase.</li>
-                <li>The organizer has access to an analytics dashboard displaying real-time insights on ticket sales, attendee check-ins, merchandise sales, and vendor performance.</li>
-            </ul>
+        <!-- Event Organizer Use Cases -->
+        <h3 style="margin-top: 2rem">1. Organizer Use Cases</h3>
+        <ul>
+          <li>
+            The organizer can create the event by specifying event details such
+            as date, time, location, ticket types, prices, and capacity. In
+            order to do this, the organizer should be logged in to an
+            “organizer” profile role. Once the event is created, the event
+            details are saved in the system, making it available to attendees.
+          </li>
+          <li>
+            The organizer can monitor and manage ticket sales in real time and
+            view details like ticket types sold and the remaining capacity. This
+            should only happen once the event is created. The sales and
+            inventory updates are displayed to the organizer on the frontend.
+          </li>
+          <li>
+            The organizer can add merchandise and concessions, allowing
+            attendees to pre-order or purchase them at the event. This
+            merchandise should be listed by the vendor to allow purchase.
+          </li>
+          <li>
+            The organizer can access real-time analytics on ticket sales,
+            attendee check-ins, merchandise sales, and vendor performance on an
+            analytics dashboard.
+          </li>
+        </ul>
 
-            <!-- Attendee Use Cases -->
-            <h3>Attendee Use Cases</h3>
-            <ul>
-                <li>The attendee can search and browse events based on categories, dates, locations, and popularity. Only listed events are visible to attendees; in-progress events are hidden.</li>
-                <li>The attendee can buy tickets and receive a unique QR code after completing a valid payment. The QR code is generated upon successful payment.</li>
-                <li>The attendee can pre-order food, drinks, and merchandise, which are linked to their QR code for easy access at the event. The QR code is updated once the order is accepted.</li>
-                <li>The attendee checks in by scanning their QR code, registering them as present and granting vendors access to pre-ordered items. Additional purchases can be made on-site, updating the QR code accordingly.</li>
-            </ul>
+        <!-- Attendee Use Cases -->
+        <h3 style="margin-top: 2rem">2. Attendee Use Cases</h3>
+        <ul>
+          <li>
+            The attendee can search for and browse events based on categories,
+            dates, locations, and popularity provided the event has been listed
+            by the organizer. Any unlisted or in-progress events should not be
+            visible to an attendee.
+          </li>
+          <li>
+            The attendee can buy tickets for an event and receive a unique QR
+            code. The attendee should only be able to purchase the ticket if a
+            valid payment method is followed through and accepted. Once the
+            payment is accepted, the QR code should be generated.
+          </li>
+          <li>
+            The attendee can order food, drinks, and merchandise in advance,
+            linked to their QR code for easy access at the event. Once the
+            orders are accepted, the QR code should be regenerated or updated
+            and the order should be saved.
+          </li>
+          <li>
+            The attendee can check in to the event by scanning their QR code,
+            which registers them as present and gives vendors access to their
+            pre-ordered items once the vendor scans the QR code. The attendee
+            can also purchase additional items at the vendor where the orders
+            are processed and the QR code is updated accordingly.
+          </li>
+        </ul>
 
-            <!-- Vendor Use Cases -->
-            <h3>Vendor Use Cases</h3>
-            <ul>
-                <li>Vendors can access a list of orders linked to attendee QR codes, fulfill these orders upon scan, and update order statuses.</li>
-                <li>Vendors can update inventory levels for food, drinks, and merchandise, providing real-time availability for organizers and attendees to view.</li>
-            </ul>
-        </section>
+        <!-- Vendor Use Cases -->
+        <h3 style="margin-top: 2rem">3. Vendor Use Cases</h3>
+        <ul>
+          <li>
+            Vendors can access a list of orders associated with attendee QR
+            codes, fulfill these orders upon scan, and update order statuses.
+            The attendee has to pre-order or make an in-event purchase for the
+            same.
+          </li>
+          <li>
+            Vendors can update inventory (e.g., stock levels for food, drink,
+            merchandise) to provide real-time availability status. Organizers
+            and attendees should be able to view the inventory status as well.
+          </li>
+        </ul>
+      </section>
     </main>
-    
+
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 My Website. All rights reserved.</p>
+      <p>&copy; 2024 EventSphere. All rights reserved.</p>
     </footer>
-
-</body>
+  </body>
 </html>

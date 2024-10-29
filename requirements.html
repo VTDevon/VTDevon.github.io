@@ -1,75 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title - SDAQ Project 1</title> <!-- Modify the title per page -->
-    <link rel="stylesheet" href="style.css">
-    
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Title - SDAQ Project 1</title>
+    <!-- Modify the title per page -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <!-- Header Section with Navigation -->
     <header>
-        <h1>SDAQ Project 1</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="background.html">Background</a></li>
-                <li><a href="design_rationale.html">Design Rationale</a></li>
-                <li><a href="requirements.html">Requirements</a></li>
-                <li><a href="high_level_design.html">High-Level Design</a></li>
-                <li><a href="use_cases.html">Use Cases</a></li>
-            </ul>
-        </nav>
+      <h1>SDAQ Project 1</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="background.html">Background</a></li>
+          <li><a href="design_rationale.html">Design Rationale</a></li>
+          <li><a href="requirements.html">Requirements</a></li>
+          <li><a href="high_level_design.html">High-Level Design</a></li>
+          <li><a href="use_cases.html">Use Cases</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Main Content Section -->
     <main>
-        <section class="centered-section">
-            <h2>Requirements</h2> <!-- Modify per page -->
-            <h3>Functional Requirements</h3>
-            <section class="requirements-tab">
-            <ul>
-                <li><strong>FR-1:</strong> The system shall allow organizers to create and define event details, including date, time, location, ticket types, prices, and capacity.</li>
-                <li><strong>FR-2:</strong> Organizers can manage ticket sales in real-time and view details on the number of tickets sold and the remaining capacity.</li>
-                <li><strong>FR-3:</strong> Organizers can list merchandise and concessions for sale within the event.</li>
-                <li><strong>FR-4:</strong> Attendees can browse events by category, date, location, and popularity.</li>
-                <li><strong>FR-5:</strong> The system shall allow attendees to purchase tickets for events and provide a unique QR code upon successful payment.</li>
-                <li><strong>FR-6:</strong> Attendees can pre-order merchandise and concessions tied to their QR code for collection at the event.</li>
-                <li><strong>FR-7:</strong> Attendees can use their QR code to check in at the event and collect pre-ordered items.</li>
-                <li><strong>FR-8:</strong> Vendors can access and fulfill attendee orders by scanning QR codes.</li>
-                <li><strong>FR-9:</strong> Vendors can manage and update their inventory in real time, displaying current stock levels to organizers and attendees.</li>
-                <li><strong>FR-10:</strong> The system shall handle secure payments and process ticket, merchandise, and concession orders.</li>
-                <li><strong>FR-11:</strong> The system shall generate an updated QR code reflecting any new orders placed during the event.</li>
-                <li><strong>FR-12:</strong> Organizers can view analytics on ticket sales, attendee check-ins, merchandise sales, and vendor performance.</li>
-                <li><strong>FR-13:</strong> The system shall provide post-event data insights for organizers, accessible through an analytics dashboard.</li>
-            </ul>
+      <section class="centered-section">
+        <h2>Requirements</h2>
+        <!-- Modify per page -->
+        <h3>Functional Requirements</h3>
+        <section class="requirements-tab">
+          <ul>
+            <li>
+              <strong>FR-1:</strong> The system shall allow organizers to create
+              and define event details, including date, time, location, ticket
+              types, prices, and capacity.
+            </li>
+            <li>
+              <strong>FR-2:</strong> Organizers can manage ticket sales in
+              real-time and view details on the number of tickets sold and the
+              remaining capacity.
+            </li>
+            <li>
+              <strong>FR-3:</strong> Organizers can list merchandise and
+              concessions for sale within the event.
+            </li>
+            <li>
+              <strong>FR-4:</strong> Attendees can browse events by category,
+              date, location, and popularity.
+            </li>
+            <li>
+              <strong>FR-5:</strong> The system shall allow attendees to
+              purchase tickets for events and provide a unique QR code upon
+              successful payment.
+            </li>
+            <li>
+              <strong>FR-6:</strong> Attendees can pre-order merchandise and
+              concessions tied to their QR code for collection at the event.
+            </li>
+            <li>
+              <strong>FR-7:</strong> Attendees can use their QR code to check in
+              at the event and collect pre-ordered items.
+            </li>
+            <li>
+              <strong>FR-8:</strong> Vendors can access and fulfill attendee
+              orders by scanning QR codes.
+            </li>
+            <li>
+              <strong>FR-9:</strong> Vendors can manage and update their
+              inventory in real time, displaying current stock levels to
+              organizers and attendees.
+            </li>
+            <li>
+              <strong>FR-10:</strong> The system shall handle secure payments
+              and process ticket, merchandise, and concession orders.
+            </li>
+            <li>
+              <strong>FR-11:</strong> The system shall generate an updated QR
+              code reflecting any new orders placed during the event.
+            </li>
+            <li>
+              <strong>FR-12:</strong> Organizers can view analytics on ticket
+              sales, attendee check-ins, merchandise sales, and vendor
+              performance.
+            </li>
+            <li>
+              <strong>FR-13:</strong> The system shall provide post-event data
+              insights for organizers, accessible through an analytics
+              dashboard.
+            </li>
+          </ul>
         </section>
 
-            <!-- Non-Functional Requirements Section -->
-            <h3>Non-Functional Requirements</h3>
-            <section class="requirements-tab">
-            <ul>
-                <li><strong>NFR-1:</strong> The system shall handle high volumes of traffic, especially during peak times around event sales and check-ins.</li>
-                <li><strong>NFR-2:</strong> Implement load balancing and auto-scaling for seamless performance across services.</li>
-                <li><strong>NFR-3:</strong> The system shall implement role-based access control for organizers, attendees, and vendors.</li>
-                <li><strong>NFR-4:</strong> Integrate secure payment gateways to process transactions.</li>
-                <li><strong>NFR-5:</strong> Encrypt sensitive data, including payment details and personal information, both in transit and at rest.</li>
-                <li><strong>NFR-6:</strong> Ensure 99.9% uptime, especially during high-traffic periods like event bookings and attendee check-ins.</li>
-                <li><strong>NFR-7:</strong> Provide mechanisms for system recovery in the case of failures to maintain consistent user experience.</li>
-                <li><strong>NFR-8:</strong> Ensure a responsive design that supports mobile and desktop devices for all users.</li>
-                <li><strong>NFR-9:</strong> Provide intuitive user interfaces for organizers, attendees, and vendors, tailored to their respective roles and functions.</li>
-            </ul>
+        <!-- Non-Functional Requirements Section -->
+        <h3>Non-Functional Requirements</h3>
+        <section class="requirements-tab">
+          <ul>
+            <li>
+              <strong>NFR-1:</strong> The system shall handle high volumes of
+              traffic, especially during peak times around event sales and
+              check-ins.
+            </li>
+            <li>
+              <strong>NFR-2:</strong> Implement load balancing and auto-scaling
+              for seamless performance across services.
+            </li>
+            <li>
+              <strong>NFR-3:</strong> The system shall implement role-based
+              access control for organizers, attendees, and vendors.
+            </li>
+            <li>
+              <strong>NFR-4:</strong> Integrate secure payment gateways to
+              process transactions.
+            </li>
+            <li>
+              <strong>NFR-5:</strong> Encrypt sensitive data, including payment
+              details and personal information, both in transit and at rest.
+            </li>
+            <li>
+              <strong>NFR-6:</strong> Ensure 99.9% uptime, especially during
+              high-traffic periods like event bookings and attendee check-ins.
+            </li>
+            <li>
+              <strong>NFR-7:</strong> Provide mechanisms for system recovery in
+              the case of failures to maintain consistent user experience.
+            </li>
+            <li>
+              <strong>NFR-8:</strong> Ensure a responsive design that supports
+              mobile and desktop devices for all users.
+            </li>
+            <li>
+              <strong>NFR-9:</strong> Provide intuitive user interfaces for
+              organizers, attendees, and vendors, tailored to their respective
+              roles and functions.
+            </li>
+          </ul>
         </section>
-    </section>
+      </section>
     </main>
-    
+
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 My Website. All rights reserved.</p>
+      <p>&copy; 2024 EventSphere. All rights reserved.</p>
     </footer>
-
-</body>
+  </body>
 </html>
