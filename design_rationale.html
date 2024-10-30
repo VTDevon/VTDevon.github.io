@@ -38,6 +38,9 @@
         </p>
 
         <h3> Function 1: Ticket Management and QR Code Generation</h3>
+        <h4> The Ticketing Module (DE-3) manages the entire lifecycle of tickets by employing the State Machine pattern to transition tickets between states such as "Available," "Reserved," "Sold," and "Checked-In." Upon successful ticket purchase, the system generates a unique QR code (DE-6) that consolidates ticket and merchandise information. If attendees make additional purchases or cancel their orders, the QR code is updated dynamically to reflect these changes in real time, ensuring accuracy and consistency (FR-6, FR-11). At the event entrance, the QR code enables quick check-ins, simplifying attendee entry and minimizing delays (FR-7).
+
+          The State Machine pattern (DE-3) ensures that the system tracks each ticket's state accurately throughout its lifecycle. Meanwhile, the QR Code Module (DE-6) streamlines operations by embedding all relevant order information into a single code, reducing the need for multiple documents and enhancing the attendee experience.</h4>
         <h3> Function 2: Event Management and Capacity Tracking </h3>
         <h3> Function 3: Secure Payment Processing and Order Management </h3>
         <h3> Function 4: Vendor Management and Inventory Tracking </h3>
