@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Test Plan - Phase 3: Frontend Integration</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    margin: 20px;
+  }
+  h1, h2, h3, h4 {
+    margin-bottom: 0.5em;
+  }
+  ul {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+  }
+  li {
+    margin-bottom: 0.25em;
+  }
+  .section {
+    margin-bottom: 2em;
+  }
+</style>
+</head>
+<body>
+
+<h1>Phase 3: Frontend Integration Test Procedures</h1>
+
+<div class="section">
+  <h2>Overview</h2>
+  <p>
+    In Phase 3, we integrate the frontend (both web and mobile interfaces) with the backend services and middleware 
+    tested in the previous phases. At this stage, all major backend components, load balancers, and notification services 
+    are assumed to be stable. Our primary focus now shifts to ensuring that the user interface correctly interacts with the 
+    underlying infrastructure. We will verify that user actions at the UI level trigger the intended backend processes, 
+    produce accurate analytics, and display relevant community interactions without performance degradation or security 
+    issues.
+  </p>
+</div>
+
+<div class="section">
+  <h2>Components Included</h2>
+  <ul>
+    <li><strong>Frontend User Interface (Web and Mobile):</strong> The complete user interface layer, 
+        including login screens, workout logging forms, nutrition input pages, goal-setting wizards, 
+        community activity feeds, and progress dashboards.</li>
+    <li><strong>Backend and Middleware Services (From Phases 1 & 2):</strong> All previously validated 
+        backend microservices, database operations, load balancers, and notification triggers are now integrated 
+        with the UI.</li>
+    <li><strong>API Gateway and Routing:</strong> The final routing layer that ensures requests from the UI 
+        reach the correct backend services.</li>
+    <li><strong>Controller Modules for UI Actions:</strong> 
+      <ul>
+        <li>Goal Setting and Tracking Controller</li>
+        <li>Workout Logging Controller</li>
+        <li>Community Engagement Controller (forum, activity feed, social posts)</li>
+        <li>Progress Dashboard Controller (analytics visualizations)</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Main Purpose of Phase 3 Testing</h2>
+  <p>
+    The main purpose of the Phase 3 tests is to validate the end-to-end user experience. By simulating user actions in a 
+    controlled test environment, we ensure that each UI action:
+  </p>
+  <ul>
+    <li>Correctly invokes the appropriate backend service via the API Gateway.</li>
+    <li>Receives timely and accurate responses (e.g., updated workout data, nutritional insights, community posts).</li>
+    <li>Displays analytics and progress reports correctly, reflecting real backend computations.</li>
+    <li>Handles error conditions gracefully (e.g., network timeouts, invalid input, or server errors) with 
+        user-friendly messages.</li>
+    <li>Maintains a responsive and intuitive interface under typical and peak load conditions.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Test Environment</h2>
+  <ul>
+    <li><strong>Staging Server:</strong> A staging environment mirroring the production infrastructure will be used, 
+        complete with all backend services, load balancers, and databases populated with representative (but anonymized) 
+        test data.</li>
+    <li><strong>Test Devices:</strong> Various browsers (Chrome, Firefox, Safari) and mobile platforms (Android, iOS) to 
+        ensure cross-platform compatibility and responsive design.</li>
+    <li><strong>Network Simulation Tools:</strong> For simulating slow connections or packet loss, to test UI resilience.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Test Procedure and Case Skeletons</h2>
+  <p>The following are high-level test case skeletons; they define the sequence of user actions and expected interactions 
+     without specifying exact data values or outcomes. Detailed test data will be refined later.</p>
+
+  <h3>User Login and Profile Setup</h3>
+  <ul>
+    <li><strong>TC-FE-01:</strong> User opens the application and logs in with valid credentials. 
+        Verify correct retrieval of user profile, fitness goals, and initial dashboard metrics.</li>
+    <li><strong>TC-FE-02:</strong> User attempts to log in with invalid credentials. Confirm that error messages are 
+        displayed without crashing the UI.</li>
+    <li><strong>TC-FE-03:</strong> User updates profile preferences (e.g., changing a dietary goal) and saves. Check if 
+        the changes propagate through the backend and refresh the dashboard view accordingly.</li>
+  </ul>
+
+  <h3>Workout Logging and Nutrition Tracking</h3>
+  <ul>
+    <li><strong>TC-FE-04:</strong> User navigates to the workout log screen, enters a new workout session (e.g., exercises, duration), 
+        and submits. Confirm that the UI updates to reflect the new workout entry and that backend data is retrieved and displayed 
+        in the progress charts.</li>
+    <li><strong>TC-FE-05:</strong> User inputs daily nutrition data (meals, calories) and saves entries. Verify that nutritional 
+        insights appear on the dashboard and that the API gateway handles these updates promptly.</li>
+    <li><strong>TC-FE-06:</strong> User attempts to log invalid nutrition data (e.g., negative calorie values). Check that the UI 
+        gracefully handles errors with user-friendly validation messages.</li>
+  </ul>
+
+  <h3>Community and Social Features</h3>
+  <ul>
+    <li><strong>TC-FE-07:</strong> User views the community activity feed, likes a post, and comments on a friend’s achievement. 
+        Validate that these actions reflect on the UI in near real-time and that backend confirms the successful update.</li>
+    <li><strong>TC-FE-08:</strong> User tries to access a community feature without proper authentication (e.g., bookmarked link 
+        without logging in). The UI should redirect to the login page with an explanatory message.</li>
+    <li><strong>TC-FE-09:</strong> User joins a challenge or group event and sees updates instantly within their dashboard, 
+        confirming that event participation data is retrieved correctly from the backend.</li>
+  </ul>
+
+  <h3>Progress Dashboard and Analytics</h3>
+  <ul>
+    <li><strong>TC-FE-10:</strong> User navigates to the progress dashboard and selects different time ranges (e.g., weekly, monthly). 
+        Confirm charts and graphs update with correct data received from the analytics service.</li>
+    <li><strong>TC-FE-11:</strong> User performs multiple rapid interactions (e.g., switching between workout history and nutrition 
+        trends) to test the UI’s responsiveness and confirm that load balancers and backend services handle requests efficiently.</li>
+    <li><strong>TC-FE-12:</strong> User views progress analytics offline or under network latency conditions. The UI should notify 
+        the user of connectivity issues and prevent data corruption or inaccurate displays.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Overhead Software (Drivers, Stubs, and Test Tools)</h2>
+  <ul>
+    <li><strong>UI Test Automation Drivers:</strong> Tools like Selenium WebDriver or Cypress for web UI testing, and Appium for 
+        mobile testing. These drivers will execute scripted user actions, ensuring consistent and repeatable test runs.</li>
+    <li><strong>Mock Services and Local Test Servers:</strong> While Phase 3 primarily relies on the now-integrated backend, 
+        certain edge cases (e.g., simulating a failed analytics computation) may still use mock endpoints or local test servers 
+        to verify UI behavior in exceptional scenarios.</li>
+    <li><strong>Network Condition Simulators:</strong> Tools to throttle bandwidth or inject artificial latency ensure UI remains 
+        functional and provides useful feedback under non-ideal network conditions.</li>
+    <li><strong>No Additional Stubs Needed for Core Backend:</strong> Since Phases 1 and 2 have already validated backend and 
+        middleware, minimal stubs are required. The focus is on full end-to-end functionality rather than isolated component tests.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Rationale for Phase 3 Strategy</h2>
+  <p>
+    By completing the backend integration and middleware verification in earlier phases, Phase 3 can focus squarely on the user 
+    experience and the correctness of front-to-back communication. With stable backend services in place, testers can now replicate 
+    real user journeys, verifying that every tap, click, and input leads to accurate and timely results on the frontend. This 
+    reduces reliance on artificial stubs, ensuring that discovered defects reflect genuine integration or user interaction issues, 
+    rather than mock environment limitations.
+  </p>
+</div>
+
+</body>
+</html>
