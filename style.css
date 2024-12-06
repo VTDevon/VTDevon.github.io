@@ -37,19 +37,6 @@ header {
   box-shadow: var(--shadow);
 }
 
-/* Header styling header {
-  background-color: var(--secondary-color);
-  padding: 1rem 0;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-header h1 {
-  color: var(--highlight-color);
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-} */
-
 /* Navbar styling */
 nav ul {
   display: flex;
