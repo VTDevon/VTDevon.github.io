@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Procedure for Build: Phase 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .purpose, .components, .objectives, .test-cases, .overhead {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Test Procedure for Build: Phase 2</h1>
+        
+        <div class="purpose">
+            <h2>Purpose of the Build</h2>
+            <p>
+                The primary goal of Phase 2 is to validate the middleware and load balancers' communication with backend components 
+                and ensure reliable handling of traffic and user notifications. This phase bridges the backend with user-facing systems, 
+                making it crucial to test performance, scalability, security, and notification mechanisms.
+            </p>
+        </div>
+        
+        <div class="components">
+            <h2>Components Included</h2>
+            <ul>
+                <li><strong>From Phase 1:</strong>
+                    <ul>
+                        <li>User authentication and management service.</li>
+                        <li>Fitness logging and nutrition tracking service.</li>
+                        <li>Database (AWS RDS).</li>
+                        <li>Third-party API integration.</li>
+                        <li>Analytics and progress computation module.</li>
+                    </ul>
+                </li>
+                <li><strong>New Components:</strong>
+                    <ul>
+                        <li>Load balancers to distribute traffic efficiently between frontend and backend.</li>
+                        <li>Notification service for sending user alerts (email and push notifications).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="objectives">
+            <h2>Key Testing Objectives</h2>
+            <ul>
+                <li><strong>Load Balancer Communication:</strong> Validate that load balancers correctly route traffic to backend services 
+                    and ensure balanced distribution of requests under normal and high traffic conditions.</li>
+                <li><strong>Performance and Scalability:</strong> Simulate user loads to measure response times and detect bottlenecks. 
+                    Validate system performance under peak loads.</li>
+                <li><strong>Notification Service:</strong> Test notification triggers for workout reminders and nutrition updates. 
+                    Verify proper formatting and delivery of notifications (both email and push).</li>
+                <li><strong>Middleware Security:</strong> Test for secure communication between the middleware and backend using HTTPS. 
+                    Simulate malicious traffic (e.g., DDoS attacks) to test the load balancer's resilience.</li>
+                <li><strong>Data Integrity and Synchronization:</strong> Verify that data transmitted through the middleware matches the backend database records.</li>
+            </ul>
+        </div>
+        
+        <div class="test-cases">
+            <h2>Test Case Skeletons</h2>
+            <ul>
+                <li><strong>Load Balancer Routing Validation:</strong>
+                    <ul>
+                        <li><strong>Setup:</strong> Configure the load balancers with backend service endpoints.</li>
+                        <li><strong>Actions:</strong>
+                            <ol>
+                                <li>Send REST API requests to the system via the load balancer.</li>
+                                <li>Log the routing of each request to ensure it reaches the intended backend service.</li>
+                            </ol>
+                        </li>
+                        <li><strong>Expected Outcome:</strong> Each request is routed to the correct service without errors or significant delay.</li>
+                    </ul>
+                </li>
+                <li><strong>Scalability Testing:</strong>
+                    <ul>
+                        <li><strong>Setup:</strong> Use a load-testing tool (e.g., JMeter) to simulate increasing numbers of concurrent users.</li>
+                        <li><strong>Actions:</strong>
+                            <ol>
+                                <li>Start with a baseline of 100 users, gradually increasing to 10,000 concurrent users.</li>
+                                <li>Measure response times, throughput, and error rates.</li>
+                            </ol>
+                        </li>
+                        <li><strong>Expected Outcome:</strong> The system maintains response times under a specified threshold (e.g., &lt;200ms) without dropping requests.</li>
+                    </ul>
+                </li>
+                <li><strong>Notification Trigger Validation:</strong>
+                    <ul>
+                        <li><strong>Setup:</strong> Configure sample notification templates for email and push notifications.</li>
+                        <li><strong>Actions:</strong>
+                            <ol>
+                                <li>Simulate scenarios (e.g., logging a missed workout, updating nutrition goals).</li>
+                                <li>Observe if notifications are triggered and sent.</li>
+                            </ol>
+                        </li>
+                        <li><strong>Expected Outcome:</strong> Notifications are delivered promptly with accurate content.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="overhead">
+            <h2>Required Overhead Software</h2>
+            <ul>
+                <li><strong>Testing Tools:</strong> Apache JMeter, Locust, or equivalent; Postman for API testing; OWASP ZAP for security validation.</li>
+                <li><strong>Stubs and Mock Services:</strong> Mock frontend to simulate user requests; stubbed third-party API responses for controlled testing.</li>
+                <li><strong>Logging and Monitoring:</strong> AWS CloudWatch or equivalent for performance monitoring during tests.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
