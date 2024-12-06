@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Procedure for Build: Phase 2</title>
+    <title>Phase 2: Test Procedure</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,42 +15,41 @@
         h1, h2, h3 {
             color: #0056b3;
         }
-        ul {
+        ul, ol {
             margin: 10px 0;
             padding-left: 20px;
         }
-        code {
-            background-color: #eee;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
             padding: 20px;
             background: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .purpose, .components, .objectives, .test-cases, .overhead {
+        .section {
             margin-bottom: 30px;
+        }
+        .section-title {
+            margin-top: 20px;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            color: #00376b;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Test Procedure for Build: Phase 2</h1>
-        
-        <div class="purpose">
-            <h2>Purpose of the Build</h2>
+        <h1>Phase 2: Test Procedure</h1>
+
+        <div class="section">
+            <h2 class="section-title">Purpose of the Build</h2>
             <p>
-                The primary goal of Phase 2 is to validate the middleware and load balancers' communication with backend components 
-                and ensure reliable handling of traffic and user notifications. This phase bridges the backend with user-facing systems, 
-                making it crucial to test performance, scalability, security, and notification mechanisms.
+                The primary goal of Phase 2 is to validate the middleware and load balancers' communication with backend components and ensure reliable handling of traffic and user notifications. This phase bridges the backend with user-facing systems, making it crucial to test performance, scalability, security, and notification mechanisms.
             </p>
         </div>
-        
-        <div class="components">
-            <h2>Components Included</h2>
+
+        <div class="section">
+            <h2 class="section-title">Components Included</h2>
             <ul>
                 <li><strong>From Phase 1:</strong>
                     <ul>
@@ -69,70 +68,151 @@
                 </li>
             </ul>
         </div>
-        
-        <div class="objectives">
-            <h2>Key Testing Objectives</h2>
+
+        <div class="section">
+            <h2 class="section-title">Key Testing Objectives</h2>
             <ul>
-                <li><strong>Load Balancer Communication:</strong> Validate that load balancers correctly route traffic to backend services 
-                    and ensure balanced distribution of requests under normal and high traffic conditions.</li>
-                <li><strong>Performance and Scalability:</strong> Simulate user loads to measure response times and detect bottlenecks. 
-                    Validate system performance under peak loads.</li>
-                <li><strong>Notification Service:</strong> Test notification triggers for workout reminders and nutrition updates. 
-                    Verify proper formatting and delivery of notifications (both email and push).</li>
-                <li><strong>Middleware Security:</strong> Test for secure communication between the middleware and backend using HTTPS. 
-                    Simulate malicious traffic (e.g., DDoS attacks) to test the load balancer's resilience.</li>
-                <li><strong>Data Integrity and Synchronization:</strong> Verify that data transmitted through the middleware matches the backend database records.</li>
-            </ul>
-        </div>
-        
-        <div class="test-cases">
-            <h2>Test Case Skeletons</h2>
-            <ul>
-                <li><strong>Load Balancer Routing Validation:</strong>
+                <li><strong>Load Balancer Communication:</strong>
                     <ul>
-                        <li><strong>Setup:</strong> Configure the load balancers with backend service endpoints.</li>
-                        <li><strong>Actions:</strong>
-                            <ol>
-                                <li>Send REST API requests to the system via the load balancer.</li>
-                                <li>Log the routing of each request to ensure it reaches the intended backend service.</li>
-                            </ol>
-                        </li>
-                        <li><strong>Expected Outcome:</strong> Each request is routed to the correct service without errors or significant delay.</li>
+                        <li>Validate that load balancers correctly route traffic to backend services.</li>
+                        <li>Ensure balanced distribution of requests under normal and high traffic conditions.</li>
+                        <li>Test failover scenarios where one backend service goes offline, ensuring the load balancer reroutes traffic to available instances.</li>
                     </ul>
                 </li>
                 <li><strong>Scalability Testing:</strong>
                     <ul>
-                        <li><strong>Setup:</strong> Use a load-testing tool (e.g., JMeter) to simulate increasing numbers of concurrent users.</li>
-                        <li><strong>Actions:</strong>
-                            <ol>
-                                <li>Start with a baseline of 100 users, gradually increasing to 10,000 concurrent users.</li>
-                                <li>Measure response times, throughput, and error rates.</li>
-                            </ol>
-                        </li>
-                        <li><strong>Expected Outcome:</strong> The system maintains response times under a specified threshold (e.g., &lt;200ms) without dropping requests.</li>
+                        <li>Simulate user loads to measure response times and detect bottlenecks.</li>
+                        <li>Validate system performance under peak loads (e.g., 10,000 concurrent users).</li>
+                        <li>Measure the load balancer's throughput and latency under stress.</li>
                     </ul>
                 </li>
-                <li><strong>Notification Trigger Validation:</strong>
+                <li><strong>Notification Service:</strong>
                     <ul>
-                        <li><strong>Setup:</strong> Configure sample notification templates for email and push notifications.</li>
-                        <li><strong>Actions:</strong>
-                            <ol>
-                                <li>Simulate scenarios (e.g., logging a missed workout, updating nutrition goals).</li>
-                                <li>Observe if notifications are triggered and sent.</li>
-                            </ol>
-                        </li>
-                        <li><strong>Expected Outcome:</strong> Notifications are delivered promptly with accurate content.</li>
+                        <li>Test notification triggers for workout reminders and nutrition updates.</li>
+                        <li>Verify proper formatting and delivery of notifications (both email and push).</li>
+                        <li>Ensure notifications adhere to a configurable delivery schedule and do not cause delays during high load.</li>
+                    </ul>
+                </li>
+                <li><strong>Data Integrity and Synchronization:</strong>
+                    <ul>
+                        <li>Verify that data transmitted through the middleware matches the backend database records.</li>
+                        <li>Test consistency of analytics and progress calculations when multiple users interact with the system concurrently.</li>
+                        <li>Validate synchronization with third-party APIs for data consistency.</li>
                     </ul>
                 </li>
             </ul>
         </div>
-        
-        <div class="overhead">
-            <h2>Required Overhead Software</h2>
+
+        <div class="section">
+            <h2 class="section-title">Test Case Skeletons</h2>
+
+            <h3>Load Balancer Communication</h3>
+            <ol>
+                <li><strong>TC-MW-01:</strong> Validate routing of REST API requests through load balancers.
+                    <ul>
+                        <li><strong>Setup:</strong> Configure the load balancer with backend service endpoints.</li>
+                        <li><strong>Actions:</strong> Send requests and track routing to the appropriate backend service.</li>
+                        <li><strong>Expected Outcome:</strong> All requests are correctly routed with no errors.</li>
+                    </ul>
+                </li>
+                <li><strong>TC-MW-02:</strong> Test failover scenarios when one backend instance goes offline.
+                    <ul>
+                        <li><strong>Setup:</strong> Simulate offline status for one backend service.</li>
+                        <li><strong>Actions:</strong> Monitor load balancer’s ability to reroute traffic to available instances.</li>
+                        <li><strong>Expected Outcome:</strong> No disruption in service; traffic seamlessly rerouted.</li>
+                    </ul>
+                </li>
+                <li><strong>TC-MW-03:</strong> Verify load balancer performance under high traffic.
+                    <ul>
+                        <li><strong>Setup:</strong> Simulate 10,000 concurrent users accessing the system.</li>
+                        <li><strong>Actions:</strong> Measure response times and error rates.</li>
+                        <li><strong>Expected Outcome:</strong> Load balancer maintains optimal performance with minimal latency.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Scalability Testing</h3>
+            <ol>
+                <li><strong>TC-MW-04:</strong> Validate system performance under increasing load.
+                    <ul>
+                        <li><strong>Setup:</strong> Incrementally increase concurrent users from 100 to 10,000.</li>
+                        <li><strong>Actions:</strong> Measure system throughput and latency.</li>
+                        <li><strong>Expected Outcome:</strong> System scales gracefully without significant performance degradation.</li>
+                    </ul>
+                </li>
+                <li><strong>TC-MW-05:</strong> Stress test backend services under maximum load.
+                    <ul>
+                        <li><strong>Setup:</strong> Simulate peak traffic on backend services via load balancer.</li>
+                        <li><strong>Actions:</strong> Monitor CPU and memory usage, response times.</li>
+                        <li><strong>Expected Outcome:</strong> Backend services remain operational without crashes or errors.</li>
+                    </ul>
+                </li>
+                <li><strong>TC-MW-06:</strong> Test database performance under concurrent queries.
+                    <ul>
+                        <li><strong>Setup:</strong> Simulate multiple simultaneous queries to the backend database.</li>
+                        <li><strong>Actions:</strong> Track query execution times and monitor errors.</li>
+                        <li><strong>Expected Outcome:</strong> Database handles all queries efficiently within acceptable thresholds.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Notification Service</h3>
+            <ol>
+                <li><strong>TC-MW-07:</strong> Validate notification delivery for different scenarios.
+                    <ul>
+                        <li><strong>Setup:</strong> Configure notification triggers for reminders and updates.</li>
+                        <li><strong>Actions:</strong> Simulate triggers and verify delivery.</li>
+                        <li><strong>Expected Outcome:</strong> Notifications are delivered accurately to all recipients.</li>
+                    </ul>
+                </li>
+                <li><strong>TC-MW-08:</strong> Test simultaneous delivery of notifications.
+                    <ul>
+                        <li><strong>Setup:</strong> Simulate 10,000 notifications triggered at the same time.</li>
+                        <li><strong>Actions:</strong> Monitor delivery success rates and times.</li>
+                        <li><strong>Expected Outcome:</strong> Notifications are delivered on time without errors.</li>
+                    </ul>
+                </li>
+                <li><strong>TC-MW-09:</strong> Verify notification formatting and accuracy.
+                    <ul>
+                        <li><strong>Setup:</strong> Create sample templates for email and push notifications.</li>
+                        <li><strong>Actions:</strong> Trigger notifications and review content for accuracy and proper formatting.</li>
+                        <li><strong>Expected Outcome:</strong> All notifications are formatted correctly and include accurate content.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Data Integrity and Synchronization</h3>
+            <ol>
+                <li><strong>TC-MW-10:</strong> Validate data consistency during concurrent updates.
+                    <ul>
+                        <li><strong>Setup:</strong> Simulate multiple users updating the same record concurrently.</li>
+                        <li><strong>Actions:</strong> Monitor the backend database for data conflicts.</li>
+                        <li><strong>Expected Outcome:</strong> Data remains consistent and no conflicts occur.</li>
+                    </ul>
+                </li>
+                <li><strong>TC-MW-11:</strong> Test backend data synchronization with third-party APIs.
+                    <ul>
+                        <li><strong>Setup:</strong> Set up API integrations for fitness and nutrition tracking.</li>
+                        <li><strong>Actions:</strong> Update data via the API and verify synchronization.</li>
+                        <li><strong>Expected Outcome:</strong> All updates propagate correctly to the backend database.</li>
+                    </ul>
+                </li>
+                <li><strong>TC-MW-12:</strong> Verify accuracy of data retrieval from the backend.
+                    <ul>
+                        <li><strong>Setup:</strong> Insert sample data into the backend database.</li>
+                        <li><strong>Actions:</strong> Retrieve the data via middleware and compare it with the original records.</li>
+                        <li><strong>Expected Outcome:</strong> Retrieved data matches the original records exactly.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Required Overhead Software</h2>
             <ul>
-                <li><strong>Testing Tools:</strong> Apache JMeter, Locust, or equivalent; Postman for API testing; OWASP ZAP for security validation.</li>
+                <li><strong>Testing Tools:</strong> Load testing: Apache JMeter, Locust, or equivalent; API testing: Postman or equivalent; Security testing: OWASP ZAP or equivalent.</li>
                 <li><strong>Stubs and Mock Services:</strong> Mock frontend to simulate user requests; stubbed third-party API responses for controlled testing.</li>
-                <li><strong>Logging and Monitoring:</strong> AWS CloudWatch or equivalent for performance monitoring during tests.</li>
+                <li><strong>Logging and Monitoring:</strong> AWS CloudWatch or equivalent for performance monitoring during tests; middleware logging enabled for debugging and error tracking.</li>
             </ul>
         </div>
     </div>
