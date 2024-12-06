@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Test Plan - Phase 1: Backend and Microservices</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+  }
+  h1, h2, h3 {
+    color: #2c3e50;
+  }
+  ul {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  .section {
+    margin-bottom: 30px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Phase 1: Backend and Microservices Test Procedures</h1>
+
+<div class="section">
+  <h2>Overview</h2>
+  <p>
+    Phase 1 focuses on testing the core backend systems and microservices that form the foundation of the Health and Fitness 
+    Tracking Application. The goal is to ensure the backend services function as intended and can handle user data securely and 
+    efficiently. By validating the functionality and integration of microservices, database interactions, and third-party APIs 
+    in this phase, we lay the groundwork for reliable middleware and frontend integration in later phases.
+  </p>
+</div>
+
+<div class="section">
+  <h2>Components Included</h2>
+  <ul>
+    <li><strong>User Authentication and Management Service:</strong> Handles user login, registration, and profile management, 
+        ensuring secure access and data integrity.</li>
+    <li><strong>Fitness Logging and Nutrition Tracking Service:</strong> Allows users to log workouts and nutrition data, storing 
+        this information in the database for later analysis.</li>
+    <li><strong>Database (AWS RDS):</strong> Stores user profiles, fitness logs, nutrition entries, and other application data.</li>
+    <li><strong>Third-Party API Integration:</strong> Fetches nutrition and workout data from external APIs to enrich the user experience.</li>
+    <li><strong>Analytics and Progress Computation Module:</strong> Computes fitness metrics, aggregates user data, and generates 
+        progress reports and insights.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Main Purpose of Phase 1 Testing</h2>
+  <p>
+    The main objective of Phase 1 is to validate that each backend component operates independently and interacts correctly with 
+    other components. The focus includes verifying REST API functionality, database schema and operations, integration with 
+    third-party APIs, and the accuracy of analytics calculations. This ensures a robust backend before introducing additional 
+    layers such as middleware and frontend interfaces.
+  </p>
+</div>
+
+<div class="section">
+  <h2>Test Environment</h2>
+  <ul>
+    <li><strong>Backend Deployment:</strong> Hosted on a staging environment replicating the production setup, including AWS RDS 
+        for database storage and mock services for third-party APIs.</li>
+    <li><strong>API Testing Tools:</strong> Postman or similar tools for testing REST API endpoints.</li>
+    <li><strong>Database Management Tools:</strong> Tools like MySQL Workbench for validating database schema and CRUD operations.</li>
+    <li><strong>Mock API Services:</strong> Simulates responses from third-party APIs to test integrations without external dependencies.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Test Procedure and Case Skeletons</h2>
+  <p>Below is a list of test case skeletons designed to validate the functionality of individual backend components and their interactions. 
+    Specific test data and expected results will be refined in later stages.</p>
+
+  <h3>User Authentication and Management Service</h3>
+  <ul>
+    <li><strong>TC-BE-01:</strong> Test user registration with valid data. Verify the user is stored in the database, and credentials are securely hashed.</li>
+    <li><strong>TC-BE-02:</strong> Test user login with valid and invalid credentials. Ensure valid credentials return a session token, and invalid credentials result in appropriate error messages.</li>
+    <li><strong>TC-BE-03:</strong> Test profile updates (e.g., changing goals). Verify updates are reflected in the database and are accessible through API calls.</li>
+  </ul>
+
+  <h3>Fitness Logging and Nutrition Tracking Service</h3>
+  <ul>
+    <li><strong>TC-BE-04:</strong> Test logging a workout (exercise type, duration, intensity). Verify the data is stored correctly and retrieved for progress analysis.</li>
+    <li><strong>TC-BE-05:</strong> Test logging nutrition data (meals, calories, macronutrients). Confirm that entries are saved and linked to the correct user profile.</li>
+    <li><strong>TC-BE-06:</strong> Test invalid input for workouts or nutrition (e.g., negative calorie values). Ensure the system rejects invalid data and provides meaningful error messages.</li>
+  </ul>
+
+  <h3>Database Operations</h3>
+  <ul>
+    <li><strong>TC-BE-07:</strong> Verify the database schema against requirements. Confirm all tables and fields align with the expected design.</li>
+    <li><strong>TC-BE-08:</strong> Test CRUD operations (Create, Read, Update, Delete) for user profiles, workouts, and nutrition entries. Ensure all operations maintain data integrity.</li>
+    <li><strong>TC-BE-09:</strong> Test data retrieval for progress analysis (e.g., fetching workouts for a specific date range). Validate performance and accuracy of results.</li>
+  </ul>
+
+  <h3>Third-Party API Integration</h3>
+  <ul>
+    <li><strong>TC-BE-10:</strong> Test fetching data from nutrition APIs (e.g., querying food items). Confirm responses are parsed and saved correctly.</li>
+    <li><strong>TC-BE-11:</strong> Test fetching workout data from external APIs. Validate that the system handles API timeouts or errors gracefully.</li>
+    <li><strong>TC-BE-12:</strong> Simulate large volumes of API requests to test scalability and response times.</li>
+  </ul>
+
+  <h3>Analytics and Progress Computation Module</h3>
+  <ul>
+    <li><strong>TC-BE-13:</strong> Test computation of fitness metrics (e.g., calories burned, progress towards goals). Verify calculations against known values.</li>
+    <li><strong>TC-BE-14:</strong> Test aggregation of user data over different timeframes (daily, weekly, monthly). Ensure accuracy and performance.</li>
+    <li><strong>TC-BE-15:</strong> Simulate edge cases (e.g., incomplete data) and verify the module handles them without errors.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Overhead Software (Drivers, Stubs, and Test Tools)</h2>
+  <ul>
+    <li><strong>API Test Automation:</strong> Use tools like Postman or JMeter to automate testing of REST API endpoints.</li>
+    <li><strong>Mock API Services:</strong> Simulate third-party APIs to test system responses under controlled conditions.</li>
+    <li><strong>Database Testing Frameworks:</strong> Use tools like Flyway for schema validation and data integrity tests.</li>
+    <li><strong>Error Simulation Drivers:</strong> Inject artificial errors (e.g., API timeouts, database connection failures) to test system resilience.</li>
+    <li><strong>Performance Testing Tools:</strong> Use tools like Apache JMeter to test scalability and response times under simulated load.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Rationale for Phase 1 Strategy</h2>
+  <p>
+    Focusing on the backend and microservices in Phase 1 ensures the foundation of the system is reliable before introducing 
+    middleware and frontend layers. By validating core services, database operations, and external API integrations early, 
+    we can address potential issues at their source, reducing the risk of cascading failures during later integration phases. 
+    This approach also minimizes reliance on stubs for backend functionality in subsequent phases, enabling more realistic 
+    end-to-end testing.
+  </p>
+</div>
+
+</body>
+</html>
