@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Phase 3: Frontend Integration</title>
+    <title>Test Plan - Health and Fitness Tracking Application</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -11,16 +11,38 @@
       <h1>Test Plan Document</h1>
       <nav>
         <ul>
-          <li> <a href = "TestScope.html"> Test Scope </a></li>
-          <li> <a href = "TestPlan.html"> Test Plan </a></li>
-          <li><a href="Phase1.html">PHASE 1 Test Procedure</a></li>
-          <li><a href="Phase2.html">PHASE 2 Test Procedure</a></li>
-          <li><a href="Phase3.html">PHASE 3 Test Procedure </a></li>
+          <li><a href="Phase1.html">Phase 1</a></li>
+          <li><a href="Phase2.html">Phase 2</a></li>
+          <li><a href="Phase3.html">Phase 3</a></li>
+          <li><a href="TestScope.html">Test Scope</a></li>
+          <li><a href="TestPlan.html">Test Plan</a></li>
           <li><a href="validation.html">Validation</a></li>
         </ul>
       </nav>
     </header>
     <div class="container">
+      <h1>Test Plan - Health and Fitness Tracking Application</h1>
+
+      <div class="section">
+        <h2>Functional Characteristics</h2>
+        <p>
+          The test plan should validate user authentication and profile management, ensuring users can securely register, log in, and manage their profiles with correct data storage and retrieval. The workout logging feature should be tested to ensure exercise type, duration, intensity, and other metrics are accurately saved and displayed. The nutrition tracking feature must be verified to ensure users can log meals, calories, and macronutrients correctly, with the system calculating and storing nutritional data. Additionally, the progress tracking and insights feature should be tested to confirm that the system generates accurate reports based on logged workouts and nutrition, allowing users to view their progress visually. The social features, including sharing achievements, commenting, and liking posts, should be validated to ensure proper functionality. Users must also be able to set personalized goals and track their progress toward those goals. Finally, integration with third-party fitness APIs and wearable devices should be confirmed to work correctly.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Performance Characteristics</h2>
+        <p>
+          The system's ability to handle concurrent users must be tested to ensure it can manage 1,000+ users simultaneously without performance degradation. The response time of the system should be checked to ensure that data processing, such as logging workouts or generating reports, completes in under two seconds. The system’s scalability should also be validated to confirm it can scale horizontally to accommodate growing user demand, particularly for modules like the Analytics Engine and Workout Tracker.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Internal Design Characteristics</h2>
+        <p>
+          The communication between different microservices, such as User Management, Workout Tracker, and Nutrition Log, should be tested to ensure smooth data flow and system integrity. Data security and privacy should be validated by ensuring that all user data is encrypted both at rest and in transit, and that the system adheres to security standards such as GDPR. The system’s reliability should be tested by validating its uptime and fault tolerance, ensuring that services remain resilient to failures in other parts of the system. Lastly, the modular architecture of the system should be validated to ensure scalability and maintainability, confirming that updates or enhancements to one module, such as the Analytics Engine, do not negatively affect other modules.
+        </p>
+      </div>
     </div>
-</body>
+  </body>
 </html>
