@@ -46,19 +46,22 @@
 
         <div class="section">
                 <h2> Phase 3: Frontend Integration </h2>
-        <p> The third phase will concentrate on integrating the frontend user interface with the backend and middleware services. This phase
-                will validate the end-to-end user experience by simulating user actions in a controlled test environment. The main objectives of 
-                Phase 3 testing are to ensure that each UI action correctly invokes the appropriate backend service, receives timely and accurate 
-                responses, displays analytics and progress reports correctly, handles error conditions gracefully, and maintains a responsive and 
-                intuitive interface under typical and peak load conditions. By testing the frontend integration, we confirm that the application 
-                functions as intended from the user's perspective.</p>
+        <p> The third phase will focus on integrating the frontend. This build will represent the entire application, including the user 
+            interface for both web and mobile platforms, as well as controllers for user actions such as goal setting, workout logging, 
+            community engagement, and analytics visualization. The integration of the frontend ensures that user interactions trigger the 
+            appropriate backend processes through the API Gateway, and that the system provides real-time updates for dashboards, 
+            notifications, and community activity feeds. This phase also tests error handling for invalid inputs, network issues, and 
+            other edge cases to maintain a responsive and intuitive user experience.</p>
         </div>
         <div class="section">
                 <h2> Rationale </h2>
-        <p> The Bottom-Up approach to integration testing allows us to validate the system incrementally, starting with the core backend
-                components and gradually adding layers of complexity. This method ensures that each segment of the system is thoroughly tested 
-                before moving on to the next phase, reducing the risk of overlooking critical issues. By following this structured approach, we 
-                can identify and address integration problems early in the development process, leading to a more stable and reliable application.</p>
+        <p> The Bottom-Up approach to integration testing allows us to validate the system incrementally, starting with the core backend 
+            components and gradually adding layers of complexity. This method ensures that each segment of the system is thoroughly tested 
+            before moving on to the next phase, reducing the risk of overlooking critical issues. By following this structured approach, 
+            we can identify and address integration problems early in the development process, leading to a more stable and reliable 
+            application. Additionally, starting with the backend ensures that the system's foundation is stable and dependable before 
+            integrating other layers. This is particularly crucial for an API-driven application like the Health and Fitness Tracking 
+            Application, where the backend serves as the backbone for all user interactions and data processing.</p>
         </div>
     </div>
   </body>
