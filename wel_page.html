@@ -5,6 +5,85 @@
   <title>Chapter &amp; Quill - Welcome</title>
   <link href="style.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    .hero {
+      background: url('Pictures/hero_book.jpg') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      font-family: Georgia, serif;
+      position: relative;
+    }
+
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 12px;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .cta-button {
+      background: linear-gradient(to right, #8B2E3C, #B76E79);
+      color: white;
+      padding: 18px 36px;
+      font-size: 1.3em;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      font-family: Georgia, serif;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+
+
+    .cta-button:hover {
+      background: linear-gradient(to right, #B76E79, #8B2E3C);
+      transform: scale(1.05);
+    }
+
+    .section-heading {
+      text-align: center;
+      font-size: 1.8em;
+      margin: 50px 0 20px;
+      font-family: Georgia, serif;
+    }
+
+    .image-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding: 20px 40px;
+    }
+
+    .image-box {
+      width: 200px;
+      text-align: center;
+      font-family: Georgia, serif;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .image-box span {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #4A4A4A;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -12,16 +91,6 @@
       <img alt="Logo" src="Pictures/logo.png" style="height:60px;" />
       <span style="font-size:1.8em;">Chapter &amp; Quill</span>
     </div>
-
-    <!-- <div class="categories-menu">
-      <button class="categories-btn"><i class="fas fa-book-open"></i> Categories</button>
-      <ul class="dropdown">
-        <li><a href="wel_page.html">Home Page</a></li>
-        <li><a href="new_releases_page.html">New Releases</a></li>
-        <li><a href="best_sellers_page.html">Best Sellers</a></li>
-        <li><a href="staff_picks_page.html">Staff Picks</a></li>
-      </ul>
-    </div> -->
 
     <div class="search-box">
       <input placeholder="Search books..." type="text" />
@@ -34,6 +103,7 @@
 
     <div class="cart-button">
       <i class="fas fa-shopping-cart"></i>
+      <span class="cart-label">Cart</span>
       <span class="cart-count">3</span>
     </div>
 
@@ -49,7 +119,6 @@
     </div>
   </header>
 
-  <!-- Inserted category nav -->
   <nav class="category-nav">
     <button class="category-button active">Home Page</button>
     <button class="category-button">New Releases</button>
@@ -57,13 +126,35 @@
     <button class="category-button">Staff Picks</button>
   </nav>
 
-  <main>
-    <section class="categories">
-      <div class="category-box">New Releases</div>
-      <div class="category-box">Best Sellers</div>
-      <div class="category-box">Staff Picks</div>
-    </section>
-  </main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <h1>Welcome to Chapter &amp; Quill</h1>
+      <p>Discover your next favorite read from our thoughtfully curated collection.</p>
+      <button class="cta-button" onclick="location.href='cat_page.html'">Shop for Books</button>
+    </div>
+  </section>
+
+  <!-- Featured Categories -->
+  <h2 class="section-heading">Explore Popular Categories</h2>
+  <div class="image-grid">
+    <div class="image-box">
+      <img src="Pictures/Fantasy.png" alt="Fantasy" />
+      <span>Fantasy</span>
+    </div>
+    <div class="image-box">
+      <img src="Pictures/History.png" alt="History" />
+      <span>History</span>
+    </div>
+    <div class="image-box">
+      <img src="Pictures/Mystery.png" alt="Mystery" />
+      <span>Mystery</span>
+    </div>
+    <div class="image-box">
+      <img src="Pictures/Romance.png" alt="Romance" />
+      <span>Romance</span>
+    </div>
+  </div>
 
   <footer style="background:#f0ede5; text-align:center; padding:20px; font-family:Georgia, serif; border-top:1px solid #ccc;">
     <p>© 2025 Chapter &amp; Quill. All rights reserved.</p>

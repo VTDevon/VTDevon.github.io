@@ -124,21 +124,48 @@ header {
 }
 
 .cart-button {
-  position: relative;
-  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(to right, #8B2E3C, #B76E79);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-family: 'Georgia', serif;
+  font-size: 0.95em;
   cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.cart-button:hover {
+  background: linear-gradient(to right, #B76E79, #8B2E3C);
+  transform: translateY(-1px);
+}
+
+.cart-button i {
+  font-size: 1.1em;
+}
+
+.cart-label {
+  font-weight: bold;
 }
 
 .cart-count {
-  position: absolute;
-  top: -6px;
-  right: -10px;
-  background: #8B2E3C; /* Burgundy */
-  color: white;
-  font-size: 0.7em;
+  background: #FFFFFF;
+  color: #8B2E3C;
+  font-size: 0.75em;
+  font-weight: bold;
   border-radius: 50%;
-  padding: 2px 6px;
+  padding: 4px 7px;
+  line-height: 1;
+  margin-left: 4px;
+  box-shadow: 0 0 0 2px #8B2E3C inset;
+  display: inline-block;
+  min-width: 22px;
+  text-align: center;
 }
+
 
 #hamburger-toggle {
   display: none;
