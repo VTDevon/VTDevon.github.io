@@ -1,68 +1,81 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<title>Chapter &amp; Quill - Welcome</title>
-<link href="style.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <meta charset="utf-8" />
+  <title>Chapter &amp; Quill - Welcome</title>
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
-<header>
+  <header>
+    <div class="logo" style="display:flex; align-items:center; gap:12px;">
+      <img alt="Logo" src="Pictures/logo.png" style="height:60px;" />
+      <span style="font-size:1.8em;">Chapter &amp; Quill</span>
+    </div>
 
-<div class="logo" style="display:flex; align-items:center; gap:12px;">
-<img alt="Logo" src="Pictures/logo.png" style="height:60px;"/>
-<span style="font-size:1.8em;">Chapter &amp; Quill</span>
-</div>
+    <!-- <div class="categories-menu">
+      <button class="categories-btn"><i class="fas fa-book-open"></i> Categories</button>
+      <ul class="dropdown">
+        <li><a href="wel_page.html">Home Page</a></li>
+        <li><a href="new_releases_page.html">New Releases</a></li>
+        <li><a href="best_sellers_page.html">Best Sellers</a></li>
+        <li><a href="staff_picks_page.html">Staff Picks</a></li>
+      </ul>
+    </div> -->
 
-<div class="categories-menu">
-<button class="categories-btn"><i class="fas fa-book-open"></i> Categories</button>
-<ul class="dropdown">
-<li><a href="new_releases_page.html">New Releases</a></li>
-<li><a href="best_sellers_page.html">Best Sellers</a></li>
-<li><a href="staff_picks_page.html">Staff Picks</a></li>
-</ul>
-</div>
-<div class="search-box">
-<input placeholder="Search books..." type="text"/>
-<i class="fas fa-search"></i>
-</div>
-<div class="auth-button">
-<button><i class="fas fa-user"></i> Hello, Devon</button>
-</div>
-<div class="cart-button">
-<i class="fas fa-shopping-cart"></i>
-<span class="cart-count">3</span>
-</div>
-<input id="hamburger-toggle" type="checkbox"/>
-<label class="hamburger" for="hamburger-toggle"><i class="fas fa-bars"></i></label>
-<div class="hamburger-menu">
-<ul>
-<li><a href="wel_page.html">Home</a></li>
-<li><a href="cat_page.html">Categories</a></li>
-<li><a href="#">Contact</a></li>
-<li><a href="#">Account</a></li>
-</ul>
-</div>
-</header>
-<main>
-<section class="categories">
-<div class="category-box">New Releases</div>
-<div class="category-box">Best Sellers</div>
-<div class="category-box">Staff Picks</div>
-</section>
-</main>
-<footer style="background:#f0ede5; text-align:center; padding:20px; font-family:Georgia, serif; border-top:1px solid #ccc;">
-<p>© 2025 Chapter &amp; Quill. All rights reserved.</p>
-<p>
-<a href="contact_page.html">Contact</a> |
+    <div class="search-box">
+      <input placeholder="Search books..." type="text" />
+      <i class="fas fa-search"></i>
+    </div>
+
+    <div class="auth-button">
+      <button><i class="fas fa-user"></i> Hello, Devon</button>
+    </div>
+
+    <div class="cart-button">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count">3</span>
+    </div>
+
+    <input id="hamburger-toggle" type="checkbox" />
+    <label class="hamburger" for="hamburger-toggle"><i class="fas fa-bars"></i></label>
+    <div class="hamburger-menu">
+      <ul>
+        <li><a href="wel_page.html">Home</a></li>
+        <li><a href="cat_page.html">Categories</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Account</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Inserted category nav -->
+  <nav class="category-nav">
+    <button class="category-button active">Home Page</button>
+    <button class="category-button">New Releases</button>
+    <button class="category-button">Best Sellers</button>
+    <button class="category-button">Staff Picks</button>
+  </nav>
+
+  <main>
+    <section class="categories">
+      <div class="category-box">New Releases</div>
+      <div class="category-box">Best Sellers</div>
+      <div class="category-box">Staff Picks</div>
+    </section>
+  </main>
+
+  <footer style="background:#f0ede5; text-align:center; padding:20px; font-family:Georgia, serif; border-top:1px solid #ccc;">
+    <p>© 2025 Chapter &amp; Quill. All rights reserved.</p>
+    <p>
+      <a href="contact_page.html">Contact</a> |
       <a href="directions_page.html">Directions</a>
-</p>
-<p>
-<a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook fa-lg" style="margin: 0 10px;"></i></a>
-<a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter fa-lg" style="margin: 0 10px;"></i></a>
-<a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube fa-lg" style="margin: 0 10px;"></i></a>
-</p>
-</footer>
+    </p>
+    <p>
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook fa-lg" style="margin: 0 10px;"></i></a>
+      <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter fa-lg" style="margin: 0 10px;"></i></a>
+      <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube fa-lg" style="margin: 0 10px;"></i></a>
+    </p>
+  </footer>
 </body>
 </html>
