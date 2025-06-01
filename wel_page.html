@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Chapter &amp; Quill - Welcome</title>
-  <link href="style.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Chapter &amp; Quill - Welcome
+  </title>
+  <link href="style.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
   <style>
-    .hero {
-      background: url('Pictures/hero_book.jpg') no-repeat center center/cover;
+   .hero {
+      background: url('Pictures/hero_book.png') no-repeat center center/cover;
       height: 400px;
       display: flex;
       align-items: center;
@@ -50,10 +52,11 @@
 
     .section-heading {
       text-align: center;
-      font-size: 1.8em;
+      font-size: 2.1em;
       margin: 50px 0 20px;
       font-family: Georgia, serif;
     }
+
 
     .image-grid {
       display: flex;
@@ -84,89 +87,277 @@
       color: #4A4A4A;
     }
   </style>
-</head>
-<body>
-  <header>
+  <style>
+   html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+  </style>
+ </head>
+ <body>
+  <main>
+   <header>
     <div class="logo" style="display:flex; align-items:center; gap:12px;">
-      <img alt="Logo" src="Pictures/logo.png" style="height:60px;" />
-      <span style="font-size:1.8em;">Chapter &amp; Quill</span>
+     <img alt="Logo" src="Pictures/logo.png" style="height:60px;"/>
+     <span style="font-size:1.8em;">
+      Chapter &amp; Quill
+     </span>
     </div>
-
     <div class="search-box">
-      <input placeholder="Search books..." type="text" />
-      <i class="fas fa-search"></i>
+     <div class="category-select">
+      <select>
+       <option>
+        Categories
+       </option>
+       <option>
+        Fantasy
+       </option>
+       <option>
+        History
+       </option>
+       <option>
+        Mystery
+       </option>
+       <option>
+        Romance
+       </option>
+       <option>
+        New Releases
+       </option>
+       <option>
+        Best Sellers
+       </option>
+       <option>
+        Staff Picks
+       </option>
+      </select>
+     </div>
+     <input placeholder="Search for Books" type="text"/>
+     <button class="search-button">
+      <i class="fas fa-search">
+      </i>
+     </button>
     </div>
-
     <div class="auth-button">
-      <button><i class="fas fa-user"></i> Hello, Devon</button>
+     <button>
+      <i class="fas fa-user">
+      </i>
+      Hello, Devon
+     </button>
     </div>
-
     <div class="cart-button">
-      <i class="fas fa-shopping-cart"></i>
-      <span class="cart-label">Cart</span>
-      <span class="cart-count">3</span>
+     <i class="fas fa-shopping-cart">
+     </i>
+     <span class="cart-label">
+      Cart
+     </span>
+     <span class="cart-count">
+      3
+     </span>
     </div>
-
-    <input id="hamburger-toggle" type="checkbox" />
-    <label class="hamburger" for="hamburger-toggle"><i class="fas fa-bars"></i></label>
+    <input id="hamburger-toggle" type="checkbox"/>
+    <label class="hamburger" for="hamburger-toggle">
+     <i class="fas fa-bars">
+     </i>
+    </label>
     <div class="hamburger-menu">
-      <ul>
-        <li><a href="wel_page.html">Home</a></li>
-        <li><a href="cat_page.html">Categories</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Account</a></li>
-      </ul>
+     <ul>
+      <li>
+       <a href="wel_page.html">
+        Home
+       </a>
+      </li>
+      <li>
+       <a href="cat_page.html">
+        Categories
+       </a>
+      </li>
+      <li>
+       <a href="#">
+        Contact
+       </a>
+      </li>
+      <li>
+       <a href="#">
+        Account
+       </a>
+      </li>
+     </ul>
     </div>
-  </header>
-
-  <nav class="category-nav">
-    <button class="category-button active">Home Page</button>
-    <button class="category-button">New Releases</button>
-    <button class="category-button">Best Sellers</button>
-    <button class="category-button">Staff Picks</button>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero">
+   </header>
+   <nav class="category-nav">
+    <button class="category-button active">
+     Home Page
+    </button>
+    <button class="category-button">
+     New Releases
+    </button>
+    <button class="category-button">
+     Best Sellers
+    </button>
+    <button class="category-button">
+     Staff Picks
+    </button>
+   </nav>
+   <!-- Hero Section -->
+   <section class="hero">
     <div class="hero-overlay">
-      <h1>Welcome to Chapter &amp; Quill</h1>
-      <p>Discover your next favorite read from our thoughtfully curated collection.</p>
-      <button class="cta-button" onclick="location.href='cat_page.html'">Shop for Books</button>
+     <h1>
+      Welcome to Chapter &amp; Quill
+     </h1>
+     <p>
+      Discover your next favorite read from our thoughtfully curated collection.
+     </p>
+     <button class="cta-button" onclick="location.href='cat_page.html'">
+      Shop for Books
+     </button>
     </div>
-  </section>
+   </section>
+   <!-- Featured Categories -->
+   <h2 class="section-heading">
+    Explore Popular Categories
+   </h2>
+   <div class="image-grid">
+    <div class="image-box">
+     <img alt="Fantasy" src="Pictures/Fantasy.png"/>
+     <span>
+      Fantasy
+     </span>
+    </div>
+    <div class="image-box">
+     <img alt="History" src="Pictures/History.png"/>
+     <span>
+      History
+     </span>
+    </div>
+    <div class="image-box">
+     <img alt="Mystery" src="Pictures/Mystery.png"/>
+     <span>
+      Mystery
+     </span>
+    </div>
+    <div class="image-box">
+     <img alt="Romance" src="Pictures/Romance.png"/>
+     <span>
+      Romance
+     </span>
+    </div>
+   </div>
+   <h2 class="section-heading">
+    Featured Books
+   </h2>
+   <div class="book-grid">
+    <div class="book-box">
+     <img alt="Book 1" src="https://images.alibris.com/isbn/9780385472579.jpg"/>
+     <h4>
+      The Things They Carried
+     </h4>
+     <p>
+      by Tim O'Brien
+     </p>
+     <p class="price">
+      $12.99
+     </p>
+     <button class="btn add-cart">
+      Add to Cart
+     </button>
+    </div>
+    <div class="book-box">
+     <img alt="Book 2" src="https://images.alibris.com/isbn/9780140449136.jpg"/>
+     <h4>
+      The Odyssey
+     </h4>
+     <p>
+      by Homer
+     </p>
+     <p class="price">
+      $9.49
+     </p>
+     <button class="btn add-cart">
+      Add to Cart
+     </button>
+    </div>
+    <div class="book-box">
+     <img alt="Book 3" src="https://images.alibris.com/isbn/9780679735779.jpg"/>
+     <h4>
+      Beloved
+     </h4>
+     <p>
+      by Toni Morrison
+     </p>
+     <p class="price">
+      $11.79
+     </p>
+     <button class="btn add-cart">
+      Add to Cart
+     </button>
+    </div>
+    <div class="book-box">
+     <img alt="Book 4" src="https://images.alibris.com/isbn/9780061120084.jpg"/>
+     <h4>
+      To Kill a Mockingbird
+     </h4>
+     <p>
+      by Harper Lee
+     </p>
+     <p class="price">
+      $10.25
+     </p>
+     <button class="btn add-cart">
+      Add to Cart
+     </button>
+    </div>
+   </div>
 
-  <!-- Featured Categories -->
-  <h2 class="section-heading">Explore Popular Categories</h2>
-  <div class="image-grid">
-    <div class="image-box">
-      <img src="Pictures/Fantasy.png" alt="Fantasy" />
-      <span>Fantasy</span>
-    </div>
-    <div class="image-box">
-      <img src="Pictures/History.png" alt="History" />
-      <span>History</span>
-    </div>
-    <div class="image-box">
-      <img src="Pictures/Mystery.png" alt="Mystery" />
-      <span>Mystery</span>
-    </div>
-    <div class="image-box">
-      <img src="Pictures/Romance.png" alt="Romance" />
-      <span>Romance</span>
-    </div>
-  </div>
-
+   <section style="text-align:center; padding:40px 20px; background:#fdfaf5; font-family:Georgia, serif;">
+    <blockquote style="font-size:1.5em; font-style:italic; color:#8B2E3C; margin-bottom:20px;">
+     “A room without books is like a body without a soul.” – Cicero
+    </blockquote>
+    <p style="margin-bottom:12px; font-size:1em;">
+     Subscribe to our monthly picks
+    </p>
+    <input placeholder="Your email address" style="padding:10px; width:250px; border-radius:25px; border:1px solid #ccc;" type="email"/>
+    <button style="padding:10px 20px; border:none; border-radius:25px; background:#8B2E3C; color:white; margin-left:10px;">
+     Subscribe
+    </button>
+   </section>
+  </main>
   <footer style="background:#f0ede5; text-align:center; padding:20px; font-family:Georgia, serif; border-top:1px solid #ccc;">
-    <p>© 2025 Chapter &amp; Quill. All rights reserved.</p>
-    <p>
-      <a href="contact_page.html">Contact</a> |
-      <a href="directions_page.html">Directions</a>
-    </p>
-    <p>
-      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook fa-lg" style="margin: 0 10px;"></i></a>
-      <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter fa-lg" style="margin: 0 10px;"></i></a>
-      <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube fa-lg" style="margin: 0 10px;"></i></a>
-    </p>
+   <p>
+    © 2025 Chapter &amp; Quill. All rights reserved.
+   </p>
+   <p>
+    <a href="contact_page.html">
+     Contact
+    </a>
+    |
+    <a href="directions_page.html">
+     Directions
+    </a>
+   </p>
+   <p>
+    <a href="https://www.facebook.com" target="_blank">
+     <i class="fab fa-facebook fa-lg" style="margin: 0 10px;">
+     </i>
+    </a>
+    <a href="https://www.twitter.com" target="_blank">
+     <i class="fab fa-twitter fa-lg" style="margin: 0 10px;">
+     </i>
+    </a>
+    <a href="https://www.youtube.com" target="_blank">
+     <i class="fab fa-youtube fa-lg" style="margin: 0 10px;">
+     </i>
+    </a>
+   </p>
+   <!-- Quote / Newsletter Section -->
+   <!-- Why Shop With Us -->
+   <!-- Featured Books -->
   </footer>
-</body>
+ </body>
 </html>

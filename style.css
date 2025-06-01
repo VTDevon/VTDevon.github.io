@@ -365,3 +365,58 @@ header {
     .book-box .add-cart:hover {
       background: #B76E79;
     }
+
+
+/* Category Dropdown with Search */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  padding: 0;
+}
+
+.category-select select {
+  padding: 8px 10px;
+  border: none;
+  background: #f4f4f4;
+  font-family: Georgia, serif;
+  font-size: 0.95em;
+  border-right: 1px solid #ccc;
+  height: 100%;
+  cursor: pointer;
+}
+
+.search-box input {
+  padding: 8px 14px;
+  border: none;
+  font-family: Georgia, serif;
+  font-size: 0.95em;
+  flex: 1;
+  min-width: 260px;
+}
+
+
+.search-button {
+  background: white;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+  height: 100%;
+}
+
+.search-button:focus,
+.search-button:active {
+  outline: none;
+  box-shadow: none;
+}
+
+
+.search-button i {
+  font-size: 1.1em;
+}
